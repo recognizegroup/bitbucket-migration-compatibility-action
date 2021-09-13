@@ -5,5 +5,5 @@ runs:
   steps:
     - shell: bash
       run: |
-        chown -R $(id -u):$(id -g) "${{ github.workspace }}"
-        chmod -R 777 "${{ github.workspace }}"
+        chown -R $(id -u):$(id -g) "$(pwd)"
+        chmod -R 777 "$(pwd)"
