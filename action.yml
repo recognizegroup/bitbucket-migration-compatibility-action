@@ -5,5 +5,13 @@ runs:
   steps:
     - shell: sh
       run: |
+        if [command -v apt-get > /dev/null]
+        then
+           apt-get update
+           apt-get install -y socat
+        else
+           apk add --no-cache docker-cli
+        fi
+
         chown -R $(id -u):$(id -g) "$(pwd)"
         chmod -R 777 "$(pwd)"
