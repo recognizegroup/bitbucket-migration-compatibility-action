@@ -8,7 +8,7 @@ runs:
         if [command -v apt-get > /dev/null]
         then
            apt-get update
-           apt-get install -y socat
+           apt-get install -y docker-ce-cli
         else
            apk add --no-cache docker-cli
         fi
