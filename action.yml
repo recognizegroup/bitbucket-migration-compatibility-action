@@ -3,7 +3,7 @@ description: 'Ensures (filesystem) compatibility with BitBucket pipelines.'
 runs:
   using: "composite"
   steps:
-    - shell: bash
+    - shell: sh
       run: |
         chown -R $(id -u):$(id -g) "$(pwd)"
         chmod -R 777 "$(pwd)"
