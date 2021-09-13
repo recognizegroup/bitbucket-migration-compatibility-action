@@ -1,0 +1,9 @@
+name: 'BitBucket Migration Compatibility Action'
+description: 'Ensures (filesystem) compatibility with BitBucket pipelines.'
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        chown -R $(id -u):$(id -g) "${{ github.workspace }}"
+        chmod -R 777 "${{ github.workspace }}"
